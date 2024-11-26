@@ -1,0 +1,144 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-out; /* Fade-in animation for body */
+}
+
+/* Table container styling */
+.table-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    opacity: 0;
+    animation: fadeInTableContainer 1s ease-out forwards; /* Fade-in table container */
+}
+
+/* Table header styling */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards;
+    animation-delay: 0.3s; /* Delay for header */
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    opacity: 0;
+    animation: fadeInTable 1s ease-out forwards;
+    animation-delay: 0.5s; /* Delay for table */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Buttons styling */
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: fadeInButtons 1s ease-out forwards;
+    animation-delay: 1s; /* Delay for buttons */
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Keyframes for animations */
+
+/* Fade-in animation for the entire page */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-in animation for the table container */
+@keyframes fadeInTableContainer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-in effect for table and text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInTable {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-in effect for buttons */
+@keyframes fadeInButtons {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

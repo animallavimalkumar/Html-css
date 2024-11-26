@@ -1,0 +1,148 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    animation: fadeInBody 1.5s ease-out; /* Fade-in animation for body */
+}
+
+/* Container for the form */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInContainer 1s ease-out forwards; /* Fade-in for form container */
+}
+
+/* Title styling */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInTitle 1s ease-out forwards;
+}
+
+/* Form fields styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Label and input field styling */
+label {
+    font-size: 14px;
+    color: #555;
+}
+
+input, select, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+/* Textarea field */
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Input and textarea focus animation */
+input:focus, select:focus, textarea:focus {
+    border-color: #3498db;
+    animation: focusField 0.3s ease-out; /* Focus effect animation */
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Primary button styling */
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Hover effect for primary button */
+}
+
+/* Secondary button styling */
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+    transform: scale(1.05); /* Hover effect for secondary button */
+}
+
+/* Keyframes for animations */
+
+/* Fade-in animation for body */
+@keyframes fadeInBody {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-in animation for container */
+@keyframes fadeInContainer {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in animation for form title */
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Focus effect for form fields */
+@keyframes focusField {
+    0% {
+        border-color: #ddd;
+    }
+    100% {
+        border-color: #3498db;
+    }
+}

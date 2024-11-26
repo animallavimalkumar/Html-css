@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Edit EMI{% endblock %}
+{% block content %}
+<h2>Edit EMI</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" id="amount" value="{{ emi.amount }}" step="0.01" required>
+
+    <label for="start_date">Start Date:</label>
+    <input type="date" name="start_date" id="start_date" value="{{ emi.start_date }}" required>
+
+    <label for="end_date">End Date:</label>
+    <input type="date" name="end_date" id="end_date" value="{{ emi.end_date }}" required>
+
+    <label for="frequency">Frequency:</label>
+    <select name="frequency" id="frequency" required>
+        <option value="Monthly" {% if emi.frequency == 'Monthly' %}selected{% endif %}>Monthly</option>
+        <option value="Quarterly" {% if emi.frequency == 'Quarterly' %}selected{% endif %}>Quarterly</option>
+        <option value="Yearly" {% if emi.frequency == 'Yearly' %}selected{% endif %}>Yearly</option>
+    </select>
+
+    <label for="next_payment_date">Next Payment Date:</label>
+    <input type="date" name="next_payment_date" id="next_payment_date" value="{{ emi.next_payment_date }}" required>
+
+    <label for="description">Description:</label>
+    <textarea name="description" id="description">{{ emi.description }}</textarea>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="{% url 'emi_view' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

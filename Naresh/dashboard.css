@@ -1,0 +1,204 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    animation: fadeInBody 1.5s ease-out; /* Fade-in animation for body */
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    animation: fadeInContainer 1s ease-out forwards; /* Fade-in for container */
+}
+
+/* Title styling */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInTitle 1s ease-out forwards;
+}
+
+/* Summary section styling */
+.summary {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeInSection 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.summary h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Budget Overview section */
+.budget-summary {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeInSection 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.budget-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.budget-summary th, .budget-summary td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.budget-summary th {
+    background-color: #3498db;
+    color: white;
+}
+
+.budget-summary td {
+    background-color: #f9f9f9;
+}
+
+/* EMI Summary section */
+.emi-summary {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeInSection 1s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+.emi-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.emi-summary li {
+    margin-bottom: 10px;
+}
+
+/* Recent Transactions section */
+.recent-transactions {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    opacity: 0;
+    animation: fadeInSection 1s ease-out forwards;
+    animation-delay: 2s;
+}
+
+.recent-expenses, .recent-incomes {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%;
+}
+
+.recent-expenses h2, .recent-incomes h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.recent-expenses ul, .recent-incomes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-expenses li, .recent-incomes li {
+    margin-bottom: 10px;
+}
+
+/* Hover effects for all buttons */
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Keyframes for animations */
+
+/* Fade-in animation for body */
+@keyframes fadeInBody {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-in animation for container */
+@keyframes fadeInContainer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-in animation for title */
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInSection {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

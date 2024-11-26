@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Add New Budget</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="category">Category:</label>
+        <select name="category" id="category" required>
+            <option value="" disabled selected>Select a category</option>
+            {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="amount_limit">Amount Limit:</label>
+        <input type="number" name="amount_limit" id="amount_limit" step="0.01" required>
+
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date" required>
+
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date" required>
+
+        <button type="submit" class="btn">Add Budget</button>
+    </form>
+</div>
+{% endblock %}

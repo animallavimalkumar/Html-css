@@ -1,0 +1,148 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set background and font for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-out; /* Fade-in animation for body */
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    opacity: 0;
+    animation: slideIn 1s forwards; /* Slide-in effect for header */
+}
+
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    animation: bounce 2s infinite; /* Bouncing effect for logo */
+}
+
+header .navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    opacity: 0;
+    animation: fadeInLinks 1s ease-out forwards;
+    animation-delay: 0.5s; /* Staggered animation for links */
+}
+
+header .navbar a:hover {
+    background-color: #444;
+    border-radius: 5px;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Main content area styling */
+main {
+    padding: 20px 0;
+    animation: fadeIn 1.5s ease-out 0.5s; /* Fade-in for main content */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Styling for logout button */
+.logout-btn {
+    background-color: #e74c3c;
+    border-radius: 5px;
+    padding: 10px 20px;
+    opacity: 0;
+    animation: fadeInLinks 1s ease-out forwards;
+    animation-delay: 1s; /* Delay animation for logout button */
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .navbar a {
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+/* Keyframes for animations */
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide-in effect for the header */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in effect for links */
+@keyframes fadeInLinks {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Bouncing effect for the logo */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}

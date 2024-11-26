@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Finance Tracker{% endblock %}
+
+{% block content %}
+<div class="custom-container">
+    <div class="header-section">
+        <h2>Welcome, {{ user.name }}!</h2>
+    </div>
+
+    <div class="flex-container">
+        <!-- Incomes Section -->
+        <div class="card income-card">
+            <div class="card-header">
+                <h3>Your Incomes</h3>
+            </div>
+            <div class="card-body">
+                <ul class="custom-list">
+                    {% for income in income %}
+                        <li class="list-item">
+                            <strong>Amount:</strong> ₹{{ income.amount }} <br>
+                            <strong>Category:</strong> {{ income.category.name }} <br>
+                            <strong>Date:</strong> {{ income.date|date:"F j, Y" }}
+                        </li>
+                    {% empty %}
+                        <li class="list-item no-records">No incomes recorded yet.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Expenses Section -->
+        <div class="card expense-card">
+            <div class="card-header">
+                <h3>Your Expenses</h3>
+            </div>
+            <div class="card-body">
+                <ul class="custom-list">
+                    {% for expense in expenses %}
+                        <li class="list-item">
+                            <strong>Amount:</strong> ₹{{ expense.amount }} <br>
+                            <strong>Category:</strong> {{ expense.category.name }} <br>
+                            <strong>Date:</strong> {{ expense.date|date:"F j, Y" }}
+                        </li>
+                    {% empty %}
+                        <li class="list-item no-records">No expenses recorded yet.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="button-section">
+        <a href="{% url 'income_add' %}" class="custom-btn btn-success" aria-label="Add a new income entry">Add Income</a>
+        <a href="{% url 'expense_add' %}" class="custom-btn btn-primary" aria-label="Add a new expense entry">Add Expense</a>
+    </div>
+</div>
+ 
+{% endblock %}

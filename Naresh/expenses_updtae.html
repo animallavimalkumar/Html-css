@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Update Expense</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="category">Category:</label>
+        <select name="category" id="category" required>
+            <option value="" disabled>Select a category</option>
+            {% for category in categories %}
+            <option value="{{ category.id }}" {% if category.id == expense.category.id %}selected{% endif %}>{{ category.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" id="amount" step="0.01" value="{{ expense.amount }}" required>
+
+        <label for="description">Description:</label>
+        <textarea name="description" id="description">{{ expense.description }}</textarea>
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" value="{{ expense.date }}" required>
+
+        <label for="is_fixed">Is Fixed:</label>
+        <input type="checkbox" name="is_fixed" id="is_fixed" {% if expense.is_fixed %}checked{% endif %}>
+
+        <button type="submit" class="btn">Update Expense</button>
+    </form>
+</div>
+{% endblock %}

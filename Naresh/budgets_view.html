@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="table-container">
+    <h2>All Budgets</h2>
+    <a href="{% url 'budget_add' %}" class="btn">Add New Budget</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Amount Limit</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for budget in budgets %}
+            <tr>
+                <td>{{ budget.category.name }}</td>
+                <td>{{ budget.amount_limit }}</td>
+                <td>{{ budget.start_date }}</td>
+                <td>{{ budget.end_date }}</td>
+                <td>
+                    <a href="{% url 'budget_update' budget.id %}">Edit</a> |
+                    <a href="{% url 'budget_delete' budget.id %}">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No budgets found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

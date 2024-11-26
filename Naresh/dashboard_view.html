@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+    <div class="container">
+        <h1>Dashboard</h1>
+        
+        <div class="summary">
+            <h2>Summary</h2>
+            <p><strong>Total Income:</strong> ₹{{ total_income }}</p>
+            <p><strong>Total Expenses:</strong> ₹{{ total_expenses }}</p>
+            <p><strong>Net Balance:</strong> ₹{{ total_income|floatformat:2|add:"-"|add:total_expenses }}</p>
+        </div>
+
+        <!-- Budget Summary -->
+        <div class="budget-summary">
+            <h2>Budget Overview</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Limit</th>
+                        <th>Spent</th>
+                        <th>Remaining</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for budget in budget_summary %}
+                    <tr>
+                        <td>{{ budget.category }}</td>
+                        <td>₹{{ budget.limit }}</td>
+                        <td>₹{{ budget.spent }}</td>
+                        <td>₹{{ budget.limit|floatformat:2|add:"-"|add:budget.spent }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">No budget data available.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- EMI Summary -->
+        <div class="emi-summary">
+            <h2>Active EMIs</h2>
+            <ul>
+                {% for emi in emi_summary %}
+                <li>
+                    {{ emi.description }} - Amount: ₹{{ emi.amount }} - Next Payment: {{ emi.next_payment_date }} 
+                    (Ends on {{ emi.end_date }})
+                </li>
+                {% empty %}
+                <li>No active EMIs.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Recent Transactions -->
+        <div class="recent-transactions">
+            <div class="recent-expenses">
+                <h2>Recent Expenses</h2>
+                <ul>
+                    {% for expense in recent_expenses %}
+                    <li>{{ expense.date }} - {{ expense.category.name }}: ₹{{ expense.amount }} 
+                        <small>({{ expense.description }})</small>
+                    </li>
+                    {% empty %}
+                    <li>No recent expenses.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="recent-incomes">
+                <h2>Recent Incomes</h2>
+                <ul>
+                    {% for income in recent_incomes %}
+                    <li>{{ income.date }} - {{ income.category.name }}: ₹{{ income.amount }} 
+                        <small>({{ income.description }})</small>
+                    </li>
+                    {% empty %}
+                    <li>No recent incomes.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+ 

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Add Income{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Add Income</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="category">Category:</label>
+        <select name="category" id="category" required>
+            <option value="" disabled selected>Select a category</option>
+            {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" id="amount" step="0.01" required>
+    
+        <label for="description">Description:</label>
+        <textarea name="description" id="description"></textarea>
+    
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" value="{{ today|date:'Y-m-d' }}">
+    
+        <button type="submit">Add Income</button>
+    </form>
+    
+</div>
+{% endblock %}
