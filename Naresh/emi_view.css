@@ -1,0 +1,70 @@
+
+    /* Table Styling */
+    .table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        opacity: 0;
+        animation: fadeInTable 1s forwards;
+    }
+
+    /* Fade-in animation for the table */
+    @keyframes fadeInTable {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Row Slide-In Animation */
+    .animated-row {
+        animation: slideInRow 0.5s ease-in-out;
+    }
+
+    @keyframes slideInRow {
+        0% {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Button Hover Effects */
+    .animated-button {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Scale effect when hovering over buttons */
+    .animated-button:hover {
+        transform: scale(1.1);
+        background-color: #0056b3; /* Optional hover color for buttons */
+    }
+
+    /* Empty Message Styling (when no EMIs are found) */
+    .table td[colspan="7"] {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #888;
+    }
+
+    /* Optional animation for the "Add New EMI" button */
+    .animated-button {
+        opacity: 0;
+        animation: fadeInButton 1s forwards;
+    }
+
+    /* Fade-in effect for the Add New EMI button */
+    @keyframes fadeInButton {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
