@@ -1,0 +1,160 @@
+
+    /* Basic Container Fade-In */
+    .animated-container {
+        opacity: 0;
+        animation: fadeInContainer 1s forwards;
+    }
+
+    /* Fade-in effect for the main container */
+    @keyframes fadeInContainer {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Header section animation */
+    .animated-header {
+        opacity: 0;
+        animation: fadeInHeader 1s forwards;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes fadeInHeader {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Flex container animation */
+    .animated-flex {
+        display: flex;
+        gap: 30px;
+        opacity: 0;
+        animation: fadeInFlex 1s forwards;
+        animation-delay: 1s;
+    }
+
+    @keyframes fadeInFlex {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Card animation */
+    .animated-card {
+        opacity: 0;
+        animation: slideInCard 1s forwards;
+        animation-delay: 1.5s;
+    }
+
+    @keyframes slideInCard {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Animated list items */
+    .animated-list-item {
+        opacity: 0;
+        animation: fadeInListItem 0.5s forwards;
+        animation-delay: 2s;
+    }
+
+    @keyframes fadeInListItem {
+        0% {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Action buttons styling */
+    .custom-btn {
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        display: inline-block;
+        text-align: center;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .custom-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    /* Card header styling */
+    .card-header {
+        background-color: #f1f1f1;
+        padding: 10px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #ccc;
+    }
+
+    /* Card body styling */
+    .card-body {
+        padding: 15px;
+        background-color: #fff;
+    }
+
+    /* Custom list styles */
+    .custom-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .list-item {
+        padding: 8px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+    }
+
+    .no-records {
+        color: #999;
+        font-style: italic;
+    }
+
+    /* Flexbox styling for the buttons */
+    .button-section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+
