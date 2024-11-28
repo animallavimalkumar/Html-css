@@ -1,0 +1,98 @@
+
+    /* General Form Styling */
+    .form-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f4f7f6;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        animation: fadeInForm 1s ease-out forwards;
+    }
+
+    /* Heading Style */
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        animation: fadeInText 1.2s ease-out forwards;
+    }
+
+    /* Fade-in animation for form container */
+    @keyframes fadeInForm {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Fade-in effect for the title */
+    @keyframes fadeInText {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Input Fields Styling */
+    input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+        transition: border-color 0.3s;
+    }
+
+    input[type="email"]:focus, input[type="password"]:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+    /* Submit Button Styling */
+    .btn {
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 4px;
+        text-align: center;
+        width: 100%;
+        transition: background-color 0.3s, transform 0.3s;
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+    }
+
+    /* Hover effect for the submit button */
+    .btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 480px) {
+        .form-container {
+            padding: 15px;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+        }
+        
+        .btn {
+            font-size: 14px;
+            padding: 10px;
+        }
+    }
+
